@@ -1,0 +1,57 @@
+<app-loader [loading]="assemblyLoading">
+  <mat-grid-list cols="12">
+    <mat-grid-tile colspan="2" rowspan="1" id="assemblyGroupSection">
+      <app-group (onFamilyChange)="onFamilyChange($event)" class="w-100"></app-group>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="5" rowspan="1">
+      <div class="w-100">
+        <mat-toolbar>
+          <span class="subTitle"> Assemblies</span>
+          <span class="spacer"></span>
+          <ng-container>
+            <mat-checkbox class="mr-1" (change)="onNativeChange($event)">
+              Hide default assemblies
+            </mat-checkbox>
+          </ng-container>
+          <ng-container>
+            <form [formGroup]="assembilySearchForm" (submit)="onSubmit($event)">
+              <app-input [parentForm]="assembilySearchForm" class="w-100" wrapperClassname="w-100" suffixIcon="search"
+                formControlName="searchTearm" placeholder="Search" (keyup)="onNativeSearch($event)">
+              </app-input>
+            </form>
+          </ng-container>
+        </mat-toolbar>
+        <mat-list role="list">
+          <perfect-scrollbar class="container">
+
+            <ng-container *ngFor="let item of assembliesData">
+              <mat-list-item role="listitem">
+                <div class="imagecontent">
+                  <div class="imagearea">
+                    <img class="image-logo" [src]='imageSrc' alt="na" />
+                  </div>
+                  <div class="ovel">
+                    <span>S</span>
+                  </div>
+                  <!-- <mat-icon mat-list-icon>folder</mat-icon> -->
+                </div>
+                <div>{{item.name}}</div>
+                <span class="spacer"></span>
+                <button mat-icon-button>
+                  <mat-icon color="primary">queue</mat-icon>
+                </button>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+            </ng-container>
+          </perfect-scrollbar>
+
+
+        </mat-list>
+        <mat-divider></mat-divider>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="5" rowspan="1">
+      <div class="subContent">component</div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</app-loader>

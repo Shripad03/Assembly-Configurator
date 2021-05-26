@@ -1,0 +1,157 @@
+::ng-deep {
+  @import "~perfect-scrollbar/css/perfect-scrollbar";
+}
+
+@import "src/styles/variables.scss";
+
+::ng-deep .mat-grid-tile {
+  border-right: 2px solid grey;
+  min-height  : $app-height !important;
+  padding     : 0 !important;
+
+  & figure {
+    padding        : 0 .5rem !important;
+    display        : flex !important;
+    justify-content: flex-start !important;
+    align-items    : flex-start !important;
+    flex-direction : column !important;
+    font-family    : Helvetica Neue;
+    font-style     : normal;
+    font-weight    : 500;
+    color          : #787878;
+    background     : #171717;
+  }
+}
+
+.mat-grid-tile:last-child {
+  border-right: none;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.imagecontent {
+  display     : flex;
+  border-style: solid;
+  padding     : 1px;
+  margin-right: 8px;
+  width       : 65px;
+  border-width: thin;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.image-logo {
+  width : 35px;
+  height: 35px;
+}
+
+.imagearea {
+  width           : 35px;
+  height          : 35px;
+  background-color: gray;
+  border-right    : 1px solid grey;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+.mat-list-base {
+  padding-top: 0px;
+  overflow-y : auto;
+  height     : 31rem;
+}
+
+.mat-list-item {
+  color: #787878;
+}
+
+.mat-list-base .mat-list-item {
+  font-size  : 12px;
+  line-height: 18px;
+  background : #171717;
+}
+
+
+.mat-toolbar {
+  color    : #787878;
+  padding  : 0px !important;
+  font-size: 14px;
+}
+
+.subTitle {
+  height     : 17px;
+  left       : 26.76%;
+  right      : 49.69%;
+  top        : calc(50% - 17px/2 + 0.5px);
+  font-size  : 14px;
+  line-height: 17px;
+}
+
+.ovel {
+  // position: absolute;
+  left         : 0%;
+  right        : 0%;
+  top          : 0%;
+  bottom       : 0%;
+  border       : 2px solid #454545;
+  box-sizing   : border-box;
+  border-radius: 50%;
+  width        : 27px;
+  height       : 27px;
+  margin       : 4px;
+
+  span {
+    display        : flex;
+    justify-content: center;
+    margin-top     : 3px;
+    text-transform : uppercase;
+  }
+}
+
+
+.leftContainer {
+  height       : 514px;
+  width        : 678px;
+  left         : 24px;
+  top          : 85px;
+  border-radius: 0px;
+}
+
+.leftContent {
+  position: absolute;
+  width   : 678px;
+  height  : 514px;
+  left    : 24px;
+  top     : 85px;
+
+  mix-blend-mode: normal;
+  opacity       : 0.92;
+  border        : 1px solid #4A4A4A;
+}
+
+.rightContainer {
+  height       : 502px;
+  width        : 631px;
+  left         : 711px;
+  top          : 85px;
+  border-radius: 0px;
+}
+
+.rightContent {
+  position: absolute;
+  width   : 631px;
+  height  : 502px;
+  left    : 711px;
+  top     : 85px;
+
+  background    : #171717;
+  mix-blend-mode: normal;
+  opacity       : 0.92;
+  border        : 1px solid #4A4A4A;
+}

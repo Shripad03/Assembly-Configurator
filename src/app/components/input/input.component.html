@@ -1,0 +1,17 @@
+<div [formGroup]="parentForm">
+  <mat-form-field
+    appearance="fill"
+    [hideRequiredMarker]="false"
+    floatLabel="always"
+  >
+    <mat-label *ngIf="label">{{ label }}</mat-label>
+    <input
+      matInput
+      [formControlName]="formControlName"
+      [placeholder]="placeholder"
+      [required]="required"
+    />
+    <mat-icon *ngIf="suffixIcon" matSuffix>{{ suffixIcon }}</mat-icon>
+    <mat-error>{{ requiredMsg }}</mat-error>
+  </mat-form-field>
+</div>

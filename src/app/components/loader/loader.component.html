@@ -1,0 +1,6 @@
+<div [ngClass]="{ 'loader-container': loading }" class="loader-container">
+  <div *ngIf="loading">
+    <mat-spinner diameter="50"> </mat-spinner>
+  </div>
+  <ng-content></ng-content>
+</div>

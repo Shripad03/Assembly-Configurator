@@ -1,0 +1,90 @@
+::ng-deep {
+  @import "~perfect-scrollbar/css/perfect-scrollbar";
+}
+
+@import "src/styles/variables.scss";
+
+.footerArea {
+  bottom         : 25px;
+  position       : fixed;
+  justify-content: center;
+  left           : 25px;
+}
+
+::ng-deep .mat-selection-list {
+  width: 100%;
+
+  mat-list-option {
+    height: 2.5rem
+  }
+
+  mat-radio-button {
+    padding-left: 1rem;
+    line-height : 2.5rem;
+  }
+
+  .mat-radio-button .mat-radio-outer-circle {
+    width : 16px !important;
+    height: 16px !important;
+  }
+
+  .mat-radio-button .mat-radio-inner-circle {
+    width : 16px !important;
+    height: 16px !important;
+  }
+
+  .mat-radio-ripple {
+    display: none;
+  }
+}
+
+#groupSearchForm {
+  // margin: 10px 10px 0 10px;
+
+  .mat-form-field {
+    width  : 100%;
+    display: contents !important;
+  }
+}
+
+::ng-deep .mat-form-field-wrapper {
+  margin-bottom: -1.2rem !important;
+
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 4px 4px 0 0;
+  padding      : .75em .75em 0 0 !important;
+}
+
+.mat-list-base {
+  overflow-y: auto;
+  height    : 22rem;
+}
+
+.mat-raised-button {
+  border-radius : 50px;
+  text-transform: uppercase;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mat-list-option {
+  width      : 113px;
+  height     : 13px;
+  // position: absolute;
+  // left: 65px;
+  // top: 150px;
+  font-family: Helvetica Neue;
+  font-style : normal;
+  font-weight: 500;
+  font-size  : 11px;
+  line-height: 13px;
+  color      : #B5B5B5;
+}

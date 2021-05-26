@@ -1,0 +1,450 @@
+[
+  {
+    "id": 1,
+    "name": "Adapter",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": false
+  },
+  {
+    "id": 2,
+    "name": "Bell End",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 3,
+    "name": "Bushing",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": false
+  },
+  {
+    "id": 4,
+    "name": "Chase Nipples",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 5,
+    "name": "Compression Connectors",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": false
+  },
+  {
+    "id": 6,
+    "name": "Compression Couplings",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 7,
+    "name": "Conduit",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": false
+  },
+  {
+    "id": 8,
+    "name": "Conduit Elbow",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 9,
+    "name": "Condulet",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": false
+  },
+  {
+    "id": 10,
+    "name": "Connector",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 11,
+    "name": "Coupling",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 12,
+    "name": "Emt Connectors",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 13,
+    "name": "Ent Connector",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 14,
+    "name": "Ent To Emt Connector",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 15,
+    "name": "Excluded Items For Overhead",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 16,
+    "name": "Excluded Items For Underground / In-Slab",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 17,
+    "name": "Female Adapters",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 18,
+    "name": "Fiberglass 30° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 19,
+    "name": "Fiberglass 45° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 20,
+    "name": "Fiberglass 60° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 21,
+    "name": "Fiberglass 90° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 22,
+    "name": "Fiberglass Connectors",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 23,
+    "name": "Fiberglass Coupling",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 24,
+    "name": "Fiberglass Female Adapters",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 25,
+    "name": "Fiberglass Male Adapters",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 26,
+    "name": "Flex Connectors",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 27,
+    "name": "Grc Conduit",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 28,
+    "name": "Grc Coupling",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 29,
+    "name": "Grc Couplings",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 30,
+    "name": "Grc Nipples",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 31,
+    "name": "Ground Bushing",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 32,
+    "name": "Locknut",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 33,
+    "name": "Locknuts",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 34,
+    "name": "Nipple",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 35,
+    "name": "Primer",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 36,
+    "name": "Pvc 11.25° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 37,
+    "name": "Pvc 22.5° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 38,
+    "name": "Pvc 30° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 39,
+    "name": "Pvc 45° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 40,
+    "name": "Pvc 60° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 41,
+    "name": "Pvc 90° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 42,
+    "name": "Pvc Bell End Coupling",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 43,
+    "name": "Pvc Coated Grc 30° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 44,
+    "name": "Pvc Coated Grc 45° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 45,
+    "name": "Pvc Coated Grc 60° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 46,
+    "name": "Pvc Coated Grc 90° Elbows",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 47,
+    "name": "Pvc Conduit",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 48,
+    "name": "Pvc Connector",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 49,
+    "name": "Pvc Couplings",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 50,
+    "name": "Pvc Glue",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 51,
+    "name": "Pvc Primer",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 52,
+    "name": "Sealtite Conduits",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 53,
+    "name": "Sealtite Connectors",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 54,
+    "name": "Set Screw Connectors",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 55,
+    "name": "Set Screw Couplings",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  },
+  {
+    "id": 56,
+    "name": "Solvent Cement",
+    "abbreviation": null,
+    "primaryImage": null,
+    "icon": null,
+    "default": true
+  }
+]

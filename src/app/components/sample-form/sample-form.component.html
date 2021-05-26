@@ -1,0 +1,31 @@
+<form [formGroup]="sampleForm" (submit)="onSubmit($event)">
+  <app-input
+    [parentForm]="sampleForm"
+    formControlName="name"
+    placeholder="Enter name"
+  ></app-input>
+  <app-input
+    [parentForm]="sampleForm"
+    formControlName="desc"
+    placeholder="Enter desc"
+  ></app-input>
+  <app-select
+    [parentForm]="sampleForm"
+    formControlName="gender"
+    [options]="genderOptions"
+    placeholder="Choose gender"
+  ></app-select>
+  <ng-container
+    *ngFor="let subject of subjects.controls; let subIdx = index"
+    formArrayName="subjects"
+  >
+    <ng-container [formGroupName]="subIdx">
+      <app-input
+        [parentForm]="subject"
+        formControlName="name"
+        placeholder="Enter subject name"
+      ></app-input>
+    </ng-container>
+  </ng-container>
+  <button mat-raised-button color="primary">Save</button>
+</form>

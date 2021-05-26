@@ -1,0 +1,46 @@
+<app-loader [loading]="groupLoading" id="assemblyGroupSection">
+    <div class="w-100">
+        <ng-container>
+            <form [formGroup]="searchForm" (submit)="onSubmit($event)" id="groupSearchForm">
+                <app-input [parentForm]="searchForm" class="w-100" suffixIcon="search" formControlName="searchTearm"
+                    placeholder="Group">
+                </app-input>
+            </form>
+        </ng-container>
+        <mat-divider></mat-divider>
+        <ng-container *ngIf="families.length === 0">
+            No Match Found
+        </ng-container>
+
+        <mat-selection-list id="groupList" [multiple]="false" maxWidth="100%">
+            <perfect-scrollbar class="container">
+
+                <ng-container *ngFor="let item of families">
+                    <mat-list-option :key="item.id">
+                        <mat-radio-button (change)="onClickFamily($event,item)" [value]="item.id">{{item.name}}
+                        </mat-radio-button>
+                    </mat-list-option>
+                    <mat-divider></mat-divider>
+                </ng-container>
+
+            </perfect-scrollbar>
+
+        </mat-selection-list>
+
+        <ng-container>
+            <mat-divider></mat-divider>
+            <div class="footerArea">
+                <div class="mt-1">
+                    <button mat-raised-button color="primary" class="w-100" (click)="navigateTo()" m={2}>
+                        Create Template
+                    </button>
+                </div>
+                <div class="mt-1">
+                    <button mat-raised-button color="primary" class="w-100" (click)="navigateTo()" m="2rem">
+                        Create new Assembly
+                    </button>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</app-loader>

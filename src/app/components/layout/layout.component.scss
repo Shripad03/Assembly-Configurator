@@ -1,0 +1,90 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  background-color: #000;
+}
+
+#headerLayout {
+  position: absolute;
+  width   : 1320px;
+  height  : 38px;
+  left    : 24px;
+  top     : 24px;
+}
+
+.logoContainer {
+  height       : 37px;
+  width        : 104px;
+  left         : 0px;
+  top          : 0px;
+  border-radius: 4px;
+}
+
+.rectangle {
+  // position: absolute;
+  left         : 0%;
+  right        : 92.12%;
+  top          : 0%;
+  bottom       : 2.63%;
+  background   : #212121;
+  border-radius: 4px;
+  // display: flex;
+}
+
+.logo {
+  // position: absolute;
+  left  : 0%;
+  right : 92.12%;
+  top   : 0%;
+  bottom: 2.63%;
+
+  border-radius: 4px;
+}
+
+.logoImage {
+  position         : absolute;
+  left             : 0.68%;
+  right            : 92.71%;
+  top              : 17px;
+  bottom           : 15.79%;
+  background       : url(../../../assets/sanveo-logo_white.png);
+  background-repeat: no-repeat;
+}
+
+.logoTitle {
+  // position: absolute;
+  height     : 17px;
+  left       : 8.86%;
+  right      : 78.41%;
+  top        : calc(50% - 17px/2 - 0.5px);
+  font-family: Helvetica Neue;
+  font-style : normal;
+  font-weight: 500;
+  font-size  : 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color      : #FFFFFF;
+}
+
+.rightMenuContainer {
+  height       : 37px;
+  width        : 198px;
+  left         : 1122px;
+  top          : 1px;
+  border-radius: 4px;
+
+}
+
+.rightMenu {
+  // position: absolute;
+  left           : 85%;
+  right          : 0%;
+  top            : 2.63%;
+  bottom         : 0%;
+  background     : #212121;
+  border-radius  : 4px;
+  justify-content: space-around;
+  display        : flex;
+}
