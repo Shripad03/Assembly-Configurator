@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o --port=5200",
+    "start": "ng serve -o --port=4200",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~11.2.14",
     "@angular/platform-browser-dynamic": "~11.2.14",
     "@angular/router": "~11.2.14",
+    "ng2-search-filter": "^0.5.1",
     "ngx-perfect-scrollbar": "^10.1.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

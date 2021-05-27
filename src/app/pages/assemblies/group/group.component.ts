@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { MatSelectionList, MatSelectionListChange, MatListOption } from '@angular/material/list';
 import {
   FormBuilder,
   FormControl,
@@ -20,14 +21,16 @@ import { markFormGroupTouched } from 'src/app/utils';
 
 export class GroupComponent implements OnInit, OnDestroy {
 
-
   @Output() onFamilyChange = new EventEmitter();
-
 
   searchForm: FormGroup;
   componentDestroyed = new Subject();
   groupLoading = false;
-  families: any[] = [];
+
+  familiesOriginalData: any = [];
+  familiesData: any[] = [];
+
+  selected = 0;
 
   constructor(
     private fb: FormBuilder,
@@ -42,6 +45,11 @@ export class GroupComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getGroups();
     this.searchForm.controls['searchTearm'].valueChanges.subscribe(() => this.filterGroup());
+
+    // this.groups.selectionChange.subscribe((s: MatSelectionListChange) => {
+    //   this.groups.deselectAll();
+    //   s.option.selected = true;
+    // });
   }
   getGroups() {
     this.groupLoading = true;
@@ -54,9 +62,11 @@ export class GroupComponent implements OnInit, OnDestroy {
     //   });
 
     this.groupService.getFamilies().subscribe(data => {
-      this.families = data;
+      this.familiesOriginalData = data;
       this.groupLoading = false;
-      console.log('families', this.families);
+      const length = data.length;
+      this.familiesData = [...this.familiesOriginalData];
+      this.familiesData.push({ id: (length + 1), name: "Custom Assemblies" })
     })
   }
 
@@ -75,27 +85,20 @@ export class GroupComponent implements OnInit, OnDestroy {
     markFormGroupTouched(this.searchForm);
     console.log('onsubmit', this.searchForm.value);
   }
+
+
   filterGroup() {
     if (this.searchForm.value.searchTearm) {
-      this.families = this.families.filter(data => data.name.toLowerCase().includes(this.searchForm.value.searchTearm.toLowerCase()));
+      this.familiesData = this.familiesData.filter(data => data.name.toLowerCase().includes(this.searchForm.value.searchTearm.toLowerCase()));
     } else {
-      this.families = this.groupService.getGroups();
+      this.familiesData = this.familiesOriginalData;
     }
   }
 
 
-  onClickFamily(event: any, item: any) {
-    console.log(event, item);
+  onClickFamily(event: any, index: any, item: any) {
 
-
-    if (event.selected) {
-      event.source.selectionList.options.toArray().forEach((element: any) => {
-        if (element.value.name != item.name) {
-          element.selected = false;
-        }
-      });
-    }
-
+    this.selected = event.checked ? index : -1;
     this.onFamilyChange.emit(item)
   }
 

@@ -10,7 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 
@@ -26,6 +26,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -51,6 +52,7 @@ const materialModules = [
 const sharedModules = [
   CommonModule,
   FormsModule,
+  Ng2SearchPipeModule,
   ReactiveFormsModule,
   ...materialModules,
 ];
@@ -67,4 +69,4 @@ const sharedComponents = [
   imports: [...sharedModules],
   exports: [...sharedModules, ...sharedComponents],
 })
-export class SharedModule {}
+export class SharedModule { }

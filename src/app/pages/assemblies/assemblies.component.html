@@ -16,7 +16,7 @@
           <ng-container>
             <form [formGroup]="assembilySearchForm" (submit)="onSubmit($event)">
               <app-input [parentForm]="assembilySearchForm" class="w-100" wrapperClassname="w-100" suffixIcon="search"
-                formControlName="searchTearm" placeholder="Search" (keyup)="onNativeSearch($event)">
+                formControlName="searchTerm" placeholder="Search" (keyup)="onNativeSearch($event)">
               </app-input>
             </form>
           </ng-container>
@@ -24,14 +24,13 @@
         <mat-list role="list">
           <perfect-scrollbar class="container">
 
-            <ng-container *ngFor="let item of assembliesData">
+            <ng-container *ngFor="let item of finalAssembliesData | filter: searchString">
               <mat-list-item role="listitem">
                 <div class="imagecontent">
                   <div class="imagearea">
-                    <img class="image-logo" [src]='imageSrc' alt="na" />
                   </div>
                   <div class="ovel">
-                    <span>S</span>
+                    <img [src]='item.icon' alt=" " />
                   </div>
                   <!-- <mat-icon mat-list-icon>folder</mat-icon> -->
                 </div>

@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', redirectTo: ASSEMBLIES_PATH, pathMatch: 'full' },
+      { path: '', redirectTo: ASSEMBLIES_PATH + '?companyId=1', pathMatch: 'full' },
       {
         path: ASSEMBLIES_PATH,
         loadChildren: () =>
@@ -33,4 +33,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

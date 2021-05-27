@@ -1,6 +1,6 @@
 <app-loader [loading]="groupLoading" id="assemblyGroupSection">
-    <div class="w-100">
-        <ng-container>
+    <div class="w-100" fxLayout="column">
+        <ng-container fxFlex="10%">
             <form [formGroup]="searchForm" (submit)="onSubmit($event)" id="groupSearchForm">
                 <app-input [parentForm]="searchForm" class="w-100" suffixIcon="search" formControlName="searchTearm"
                     placeholder="Group">
@@ -8,17 +8,19 @@
             </form>
         </ng-container>
         <mat-divider></mat-divider>
-        <ng-container *ngIf="families.length === 0">
+        <ng-container *ngIf="familiesData.length === 0">
             No Match Found
         </ng-container>
 
         <mat-selection-list id="groupList" [multiple]="false" maxWidth="100%">
             <perfect-scrollbar class="container">
 
-                <ng-container *ngFor="let item of families">
+                <ng-container *ngFor="let item of familiesData; let i =index">
                     <mat-list-option :key="item.id">
-                        <mat-radio-button (change)="onClickFamily($event,item)" [value]="item.id">{{item.name}}
-                        </mat-radio-button>
+                        <mat-checkbox class="custom-frame" [checked]="selected === i"
+                            (change)="onClickFamily($event,i,item)">
+                            {{item.name}}
+                        </mat-checkbox>
                     </mat-list-option>
                     <mat-divider></mat-divider>
                 </ng-container>
@@ -31,7 +33,7 @@
             <mat-divider></mat-divider>
             <div class="footerArea">
                 <div class="mt-1">
-                    <button mat-raised-button color="primary" class="w-100" (click)="navigateTo()" m={2}>
+                    <button mat-raised-button color="primary" class="w-100  btn-1" (click)="navigateTo()" m={2}>
                         Create Template
                     </button>
                 </div>
