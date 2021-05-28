@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import {
   FormBuilder,
@@ -42,6 +42,7 @@ export class AssembliesComponent implements OnInit, OnDestroy {
 
   constructor(
     private fb: FormBuilder,
+    private route: ActivatedRoute,
     private assemlyService: AssemblyService,
     private router: Router) {
     this.assembilySearchForm = this.fb.group({
@@ -50,6 +51,12 @@ export class AssembliesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+
+    this.route.queryParams
+      .subscribe(params => {
+        console.log(params);
+      })
+
     this.getAssemblies(1, 1);
     this.assembilySearchForm.controls['searchTerm'].valueChanges.subscribe(() => this.filterGroup());
 
