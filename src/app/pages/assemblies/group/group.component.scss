@@ -42,8 +42,7 @@
 
 .mat-list-base {
   overflow-y: auto;
-
-  height : calc(100vh -(#{$header-height}+ #{$footarea-height}));
+  height    : 60vh;
 }
 
 ::ng-deep .custom-frame {

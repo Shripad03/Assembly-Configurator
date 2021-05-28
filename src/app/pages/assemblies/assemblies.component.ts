@@ -10,6 +10,7 @@ import { CATEGORIES_PATH } from 'src/app/constants';
 import { AssemblyService } from 'src/app/services/assembly.service';
 import { markFormGroupTouched } from 'src/app/utils';
 import value from '*.json';
+import { queryParam } from 'src/app/services/queryParam.service';
 @Component({
   selector: 'app-assemblies',
   templateUrl: './assemblies.component.html',
@@ -22,6 +23,8 @@ export class AssembliesComponent implements OnInit, OnDestroy {
   assemblyLoading = false;
   checkedHideDefault = false;
 
+  params = {};
+
 
   searchString = '';
   familyId: any = 1;
@@ -29,6 +32,9 @@ export class AssembliesComponent implements OnInit, OnDestroy {
 
   assembliesData: any[] = [];
   assembliesOriginalData: any = [];
+
+  defaultAssemblies = false;
+  customAssemblies = false;
 
 
   imageSrc: any;
@@ -43,6 +49,7 @@ export class AssembliesComponent implements OnInit, OnDestroy {
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
+    private queryParamService: queryParam,
     private assemlyService: AssemblyService,
     private router: Router) {
     this.assembilySearchForm = this.fb.group({
@@ -55,19 +62,27 @@ export class AssembliesComponent implements OnInit, OnDestroy {
     this.route.queryParams
       .subscribe(params => {
         console.log(params);
+        this.queryParamService.companyId = params.companyId;
+        this.queryParamService.userId = params.userId;
+        this.queryParamService.roleId = params.roleId;
+        this.queryParamService.projectId = params.projectId;
+
+        this.companyId = this.queryParamService.companyId;
       })
 
-    this.getAssemblies(1, 1);
+    this.getAssemblies(this.companyId, 1, this.defaultAssemblies, this.customAssemblies);
     this.assembilySearchForm.controls['searchTerm'].valueChanges.subscribe(() => this.filterGroup());
 
   }
-  getAssemblies(companyId: any, familyId: number) {
+  getAssemblies(companyId: number, familyId: number, defaultAssemblies: boolean, customAssemblies: boolean) {
     this.assemblyLoading = true;
-    this.assemlyService.getAssemblies(companyId, familyId).subscribe(res => {
+    this.assemlyService.getAssemblies(companyId, familyId, defaultAssemblies, customAssemblies).subscribe(res => {
       this.assembliesOriginalData = res;
       this.assemblyLoading = false;
       this.assembliesData = [...this.assembliesOriginalData];
-      this.getImages(familyId);
+      console.log(companyId, familyId);
+
+      this.getImages(companyId, familyId);
     })
 
     // this.assemlyService
@@ -79,8 +94,8 @@ export class AssembliesComponent implements OnInit, OnDestroy {
     //   });
   }
 
-  getImages(familyId: any) {
-    this.assemlyService.getImages(familyId).subscribe((res: any) => {
+  getImages(companyId: number, familyId: number) {
+    this.assemlyService.getImages(companyId, familyId).subscribe((res: any) => {
       this.ImagesOriginalData = res;
       this.ImagesData = [...this.ImagesOriginalData];
 
@@ -139,14 +154,7 @@ export class AssembliesComponent implements OnInit, OnDestroy {
 
     this.checkedHideDefault = e.checked;
 
-    if (this.checkedHideDefault == true) {
-      this.companyId = null;
-    }
-    else {
-      this.companyId = this.familyId;
-    }
-
-    this.getAssemblies(this.companyId, this.familyId);
+    this.getAssemblies(this.companyId, this.familyId, this.checkedHideDefault,this.customAssemblies);
 
     // this.processFiter();
   }
@@ -163,22 +171,22 @@ export class AssembliesComponent implements OnInit, OnDestroy {
 
 
     if (item.name === "Custom Assemblies") {
-      this.companyId = null;
-      this.familyId = null;
+      this.customAssemblies = true;
     }
     else {
       this.familyId = item.id;
 
-      if (this.checkedHideDefault == true) {
-        this.companyId = null;
-      }
-      else {
-        this.companyId = this.familyId;
-      }
+      // if (this.checkedHideDefault == true) {
+      //   this.companyId = null;
+      // }
+      // else {
+      //   this.companyId = this.familyId;
+      // }
     }
 
+    this.params = { companyId: this.companyId }
 
-    this.getAssemblies(this.companyId, this.familyId);
+    this.getAssemblies(this.companyId, this.familyId, this.defaultAssemblies, this.customAssemblies);
   }
 
   ngOnDestroy() {

@@ -97,6 +97,7 @@ export class GroupComponent implements OnInit, OnDestroy {
 
 
   onClickFamily(event: any, index: any, item: any) {
+    console.log(event, index, item);
 
     this.selected = event.checked ? index : -1;
     this.onFamilyChange.emit(item)
