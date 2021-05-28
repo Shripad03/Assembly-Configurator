@@ -21,7 +21,7 @@ export class AssembliesComponent implements OnInit, OnDestroy {
   assembilySearchForm: FormGroup;
   componentDestroyed = new Subject();
   assemblyLoading = false;
-  checkedHideDefault = false;
+  // checkedHideDefault = false;
 
   params = {};
 
@@ -150,9 +150,11 @@ export class AssembliesComponent implements OnInit, OnDestroy {
 
   onNativeChange(e: any): void {
 
-    this.checkedHideDefault = e.checked;
+    this.defaultAssemblies = e.checked;
 
-    this.getAssemblies(this.companyId, this.familyId, this.checkedHideDefault, this.customAssemblies);
+    // console.log(this.checkedHideDefault);
+
+    this.getAssemblies(this.companyId, this.familyId, this.defaultAssemblies, this.customAssemblies);
 
     // this.processFiter();
   }
@@ -167,12 +169,12 @@ export class AssembliesComponent implements OnInit, OnDestroy {
 
   onFamilyChange(item: any) {
 
-
     if (item.name === "Custom Assemblies") {
       this.customAssemblies = true;
     }
     else {
       this.familyId = item.id;
+      this.customAssemblies = false;
 
       // if (this.checkedHideDefault == true) {
       //   this.companyId = null;
