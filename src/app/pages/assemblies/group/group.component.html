@@ -17,7 +17,7 @@
 
                 <ng-container *ngFor="let item of familiesData; let i =index">
                     <mat-list-option :key="item.id" (click)="onClickFamily($event,i,item)">
-                        <mat-checkbox class="custom-frame" (change)="onClickFamily($event,i,item)"
+                        <mat-checkbox class="custom-frame" (change)="checkClick($event,i,item)"
                             [checked]="selected === i">
                             {{item.name}}
                         </mat-checkbox>

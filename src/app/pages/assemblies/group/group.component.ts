@@ -103,6 +103,10 @@ export class GroupComponent implements OnInit, OnDestroy {
     this.onFamilyChange.emit(item)
   }
 
+  checkClick(event: any, index: any, item: any) {
+    this.selected = event.checked ? index : -1;
+  }
+
   ngOnDestroy() {
     this.componentDestroyed.next();
     this.componentDestroyed.complete();

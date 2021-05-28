@@ -80,9 +80,7 @@ export class AssembliesComponent implements OnInit, OnDestroy {
       this.assembliesOriginalData = res;
       this.assemblyLoading = false;
       this.assembliesData = [...this.assembliesOriginalData];
-      console.log(companyId, familyId);
-
-      this.getImages(companyId, familyId);
+      this.getImages(companyId, familyId, defaultAssemblies, customAssemblies);
     })
 
     // this.assemlyService
@@ -94,8 +92,8 @@ export class AssembliesComponent implements OnInit, OnDestroy {
     //   });
   }
 
-  getImages(companyId: number, familyId: number) {
-    this.assemlyService.getImages(companyId, familyId).subscribe((res: any) => {
+  getImages(companyId: number, familyId: number, defaultAssemblies: boolean, customAssemblies: boolean) {
+    this.assemlyService.getImages(companyId, familyId, defaultAssemblies, customAssemblies).subscribe((res: any) => {
       this.ImagesOriginalData = res;
       this.ImagesData = [...this.ImagesOriginalData];
 
@@ -154,7 +152,7 @@ export class AssembliesComponent implements OnInit, OnDestroy {
 
     this.checkedHideDefault = e.checked;
 
-    this.getAssemblies(this.companyId, this.familyId, this.checkedHideDefault,this.customAssemblies);
+    this.getAssemblies(this.companyId, this.familyId, this.checkedHideDefault, this.customAssemblies);
 
     // this.processFiter();
   }

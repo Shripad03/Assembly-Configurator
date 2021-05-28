@@ -34,8 +34,8 @@ export class AssemblyService {
   }
 
 
-  getImages(companyId: number, familyId: number) {
-    const url = 'Assemblies/Images?companyId=' + companyId + '&familyId=' + familyId + '&hideDefault=false&showCustom=false&pageIndex=0&pageSize=0';
+  getImages(companyId: number, familyId: number, defaultAssemblies: boolean, customAssemblies: boolean) {
+    const url = 'Assemblies/Images?companyId=' + companyId + '&familyId=' + familyId + '&hideDefault=' + defaultAssemblies + '&showCustom=' + customAssemblies + '&pageIndex=0&pageSize=0';
     return this.http.get(this.API_BASE_URL + url).pipe(catchError(this.httpService.handleError<[]>([])));
   }
 
