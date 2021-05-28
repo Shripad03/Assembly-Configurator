@@ -13,11 +13,11 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { queryParam } from './services/queryParam.service';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
+  suppressScrollX: true,
 };
-
-
 
 @NgModule({
   declarations: [AppComponent, LayoutComponent],
@@ -27,16 +27,16 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HttpClientModule,
     SharedModule,
     AppRoutingModule,
-    PerfectScrollbarModule
-
+    PerfectScrollbarModule,
   ],
   providers: [
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
-      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
     },
-    queryParam
+    queryParam,
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

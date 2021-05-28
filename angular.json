@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular11-material-boilerplate": {
+    "assemblyconfigurator-ui": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -45,7 +45,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular11-material-boilerplate",
+            "outputPath": "dist/assemblyconfigurator-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -91,18 +91,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular11-material-boilerplate:build"
+            "browserTarget": "assemblyconfigurator-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular11-material-boilerplate:build:production"
+              "browserTarget": "assemblyconfigurator-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular11-material-boilerplate:build"
+            "browserTarget": "assemblyconfigurator-ui:build"
           }
         },
         "test": {
@@ -135,16 +135,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular11-material-boilerplate:serve"
+            "devServerTarget": "assemblyconfigurator-ui:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular11-material-boilerplate:serve:production"
+              "devServerTarget": "assemblyconfigurator-ui:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular11-material-boilerplate"
+  "defaultProject": "assemblyconfigurator-ui"
 }
