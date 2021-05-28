@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "assemblyconfigurator-ui": {
+    "assemblyconfigurator": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -45,13 +45,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/assemblyconfigurator-ui",
+            "outputPath": "dist/assemblyconfigurator",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/favicon.ico", "src/assets", "src/web.config"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles/index.scss"
@@ -91,18 +91,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "assemblyconfigurator-ui:build"
+            "browserTarget": "assemblyconfigurator:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "assemblyconfigurator-ui:build:production"
+              "browserTarget": "assemblyconfigurator:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "assemblyconfigurator-ui:build"
+            "browserTarget": "assemblyconfigurator:build"
           }
         },
         "test": {
@@ -112,7 +112,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/favicon.ico", "src/assets", "src/web.config"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles/index.scss"
@@ -135,16 +135,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "assemblyconfigurator-ui:serve"
+            "devServerTarget": "assemblyconfigurator:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "assemblyconfigurator-ui:serve:production"
+              "devServerTarget": "assemblyconfigurator:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "assemblyconfigurator-ui"
+  "defaultProject": "assemblyconfigurator"
 }

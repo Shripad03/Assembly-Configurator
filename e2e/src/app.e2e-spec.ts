@@ -11,7 +11,7 @@ describe('workspace-project App', () => {
   it('should display welcome message', async () => {
     await page.navigateTo();
     expect(await page.getTitleText()).toEqual(
-      'assemblyconfigurator-ui app is running!'
+      'assemblyconfigurator app is running!'
     );
   });
 
